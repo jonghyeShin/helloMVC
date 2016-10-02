@@ -48,6 +48,7 @@ public class DoLogin extends HttpServlet {
 		else
 			page = "/view/success.jsp";
 		
+		
 		request.setAttribute("customer", customer);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
