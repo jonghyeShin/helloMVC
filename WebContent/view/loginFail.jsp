@@ -4,13 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>helloMVC Web Application</title>
+<title>Login Fail...</title>
 </head>
 <body>
-This is the home page for shopping
-
-<p> <a href="/helloMVC/home?action=login">go to login page</a></p>
-<p> <a href="/helloMVC/home?action=register">go to register page</a></p>
-
+If you want to try again. press button.
+<form action="/helloMVC/index.jsp" method="get">
+<input type="submit">
 </body>
 </html>

@@ -13,27 +13,30 @@ public class CustomerService {
 	
 	private Map<String, Customer> customers;
 	
+	public static final CustomerService instance = new CustomerService();
+	
 	public CustomerService(){
 		customers = new HashMap<String, Customer>();
 		
-		addCustomer(new Customer("id001","Alice","alice@hansung.ac.kr"));
-		addCustomer(new Customer("id002","Bob","bob@hansung.ac.kr"));
-		addCustomer(new Customer("id003","Charlie","charlie@hansung.ac.kr"));
-		addCustomer(new Customer("id004","David","david@hansung.ac.kr"));
-		addCustomer(new Customer("id005","Trudy","trudy@hansung.ac.kr"));
-		
 	}
 	
-	//여기서의 customer의 Customer 객체.
+	public static CustomerService getInstance(){
+		return instance;
+	}
+	
 	public void addCustomer(Customer customer){
 		customers.put(customer.getId(),customer);
 	}
 	
-	//customers HashMap에서 id를 이용하여 고객 객체를 찾아서 반환.
-	public Customer findCustomer(String id){
-		if(id!=null)
-			return(customers.get(id.toLowerCase()));
-		else
-			return null;
+	//맞으면 객체. 틀리면 null 리턴
+	public Customer login(String id, String password){
+		if(id!=null){
+			Customer customer=instance.customers.get(id.toLowerCase());
+			if(customer.getPassword().equals(password))
+				return customer;
+			else return null;
+		}
+		return null;
+		
 	}
 }

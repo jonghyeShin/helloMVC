@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Login Form</title>
+<title>Register Form</title>
 </head>
 <style>
 div.ex{
@@ -15,10 +15,10 @@ div.ex{
 	margin: 20px;
 }</style>
 <body>
-<h1>Login Form</h1>
+<h1>Registration Form</h1>
 <div class="ex">
-<form action="/helloMVC/doLogin" method="get">
-<table cellpadding="5">
+<form action="/helloMVC/doRegister" method="get">
+<table cellpadding="10">
 <tr>
 <td>아이디</td>
 <td><input type="text" name="id" /></td>
@@ -26,9 +26,24 @@ div.ex{
 <tr>
 <td>비밀번호</td>
 <td><input type="password" name="password" /></td>
-</tr><tr>
+</tr>
+<tr>
+<td>이름</td>
+<td><input type="text" name="name" /></td>
+</tr>
+<tr>
+<td>성별</td>
+<td><input type="radio" name="gender" value="man">남자
+<input type="radio" name="gender" value="woman">여자
+ </td>
+</tr>
+<tr>
+<td>이메일</td>
+<td><input type="text" name="email" /></td>
+</tr>
+<tr>
 <td></td>
-<td><input type="submit"/></td>
+<td><input type="submit" name="register" /></td>
 </tr>
 </table></form>
 </div>
